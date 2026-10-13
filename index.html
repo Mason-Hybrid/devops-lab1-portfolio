@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Lab 1 — My Portfolio</title>
+    <style>
+        :root {
+            --bg-from: #0b3c49;   /* teal đậm */
+            --bg-to: #14595f;     /* teal vừa */
+            --ink: #0b3c49;       /* chữ tiêu đề */
+            --accent: #1b7a80;    /* teal sáng, dùng cho h2 */
+            --highlight: #f2a93b; /* amber, điểm nhấn */
+            --panel: #eef6f6;     /* nền khối thông tin */
+            --muted: #55666e;     /* chữ phụ */
+            --success: #15803d;   /* trạng thái thành công */
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-from) 0%, var(--bg-to) 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #1f2d33;
+        }
+        .container {
+            background: #ffffff;
+            border-top: 6px solid var(--highlight);
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+            text-align: center;
+        }
+        h1 { color: var(--ink); margin-bottom: 8px; font-size: 32px; }
+        h2 { color: var(--accent); margin-bottom: 24px; font-size: 18px; font-weight: normal; }
+        .info {
+            background: var(--panel);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+            text-align: left;
+        }
+        .info p { margin: 8px 0; }
+        .badge {
+            display: inline-block;
+            background: var(--ink);
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin: 4px;
+        }
+        .badge:nth-child(even) { background: var(--accent); }
+        .footer { margin-top: 24px; font-size: 13px; color: var(--muted); }
+        .status { color: var(--success); font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Hello, DevOps!</h1>
+        <h2>Lab 1 — Trải nghiệm CI/CD Pipeline</h2>
+
+        <div class="info">
+            <p> <strong>Bài học:</strong> DevOps Lab 1 — Tổng quan</p>
+            <p> <strong>Deploy bởi:</strong> GitHub Actions CI/CD</p>
+            <p> <strong>Ngày deploy:</strong> <span id="date"></span></p>
+            <p> <strong>Pipeline status:</strong> <span class="status"> Automated</span></p>
+        </div>
+
+        <div>
+            <span class="badge">HTML5</span>
+            <span class="badge">CSS3</span>
+            <span class="badge">Git</span>
+            <span class="badge">GitHub Actions</span>
+            <span class="badge">CI/CD</span>
+            <span class="badge">DevOps</span>
+        </div>
+
+        <div class="footer">
+            <p>Deployed automatically via GitHub Actions Pipeline</p>
+            <p> Push code → CI Build → Auto Deploy → Live! </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('date').textContent = new Date().toLocaleDateString('vi-VN');
+    </script>
+</body>
+</html>
